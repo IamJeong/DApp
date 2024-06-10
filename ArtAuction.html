@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Art Auction</title>
+    <script src="./bower_components/web3/dist/web3.min.js"></script>
+    <script src="./bower_components/jquery/dist/jquery.min.js"></script>
+    <script src = "./ArtAuction.js"></script>
+    <link rel = "stylesheet" href = "styles.css">
+</head>
+
+<body>
+
+    <div class = "container">
+        <h1>등록</h1>
+        <div>
+            <label for = "artOwner">주소:</label>
+            <input type = "text" id = "artOwner" name = "artOwner" replaced = "0x">
+        </div>
+        <div>
+            <label for="artId">작품 번호</label>
+            <input type="text" id="artId" name="artId">
+        </div>
+        <div>
+            <label for="name">작품 이름:</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div>
+            <label for="price">가격 (in Ether):</label>
+            <input type="text" id="price" name="price">
+        </div>
+        <div>
+            <label for="duration">경매시간(초):</label>
+            <input type="text" id="duration" name="duration">
+        </div>
+        <div>
+            <label for="description">설명:</label>
+            <input type="text" id="description" name="description">
+        </div>
+        <button onclick="createPiece()">등록</button>
+    </div>
+
+    <div class="container">
+        <h1>미술품 정보</h1>
+        <div>
+            <label for="artNumber">작품 번호</label>
+            <input type="text" id="artNumber" name="artNumber">
+            <button onclick="art()">확인</button>
+        </div>
+        <div id="artDisplay"></div>
+    </div>
+
+    <div class="container">
+        <h1>경매 정보</h1>
+        <div>
+            <label for="auctionNumber">작품번호</label>
+            <input type="text" id="auctionNumber" name="auctionNumber">
+            <button onclick="Auction()">확인</button>
+        </div>
+        <div id="AuctionDisplay"></div>
+    </div>
+
+    <div class="container">
+        <h1>구매</h1>
+        <div>
+            <label for="buyer">address:</label>
+            <input type="text" id="buyer" name="buyer">
+        </div>
+        <div>
+            <label for="artId">Art ID:</label>
+            <input type="text" id="artId" name="artId">
+        </div>
+        <div>
+            <label for="amount">Ether</label>
+            <input type="number" id="amount" name="amount">
+        </div>
+        <button onclick="Buy()">구매</button>
+        <div id="buyFail"></div>
+    </div>
+
+    <div class="container">
+        <h1>경매 종료</h1>
+        <div>
+            <label for="EndId">경매종료:</label>
+            <input type="text" id="EndId" name="EndId">
+        </div>
+        <div>
+            <label for="owner">지갑주소</label>
+            <input type="text" id="owner" name="owner">
+        </div>
+        <button onclick="AuctionEnd()">확인</button>
+    </div>
+
+    <div class="container">
+        <h1>모든 작품 정보</h1>
+        <button onclick="displayAllArt()">모든 작품 정보 조회</button>
+        <div id="allArtDisplay"></div>
+    </div>
+
+    <div class="container">
+        <h1>경매 시간 추가</h1>
+        <div>
+            <label for="artOwner">주소:</label>
+            <input type="text" id="artOwner" name="artOwner">
+        </div>
+        <div>
+            <label for="artId">작품 번호</label>
+            <input type="text" id="artId" name="artId">
+        </div>
+        <div>
+            <label for="time">추가 시간(초)</label>
+            <input type="text" id="time" name="time">
+        </div>
+        <button onclick="addArtTime()">추가</button>
+    </div>
+
+</body>
+</html>

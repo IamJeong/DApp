@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>검색</title>
+    <script src="./bower_components/web3/dist/web3.min.js"></script>
+    <script src="./bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="./ArtAuction.js"></script>
+    <link rel = "stylesheet" href = "styles.css">
+</head>
+<body>
+        
+    <a href = "./index.html" class = "button" id = "a">메인</a>
+
+    <div class = "container">
+        <h1>미술품 정보</h1>
+        <div>
+            <label for = "artNumber">작품 번호</label>
+            <input type = "text" id = "artNumber" name = "artNumber" placeholder = "숫자만 입력">
+            <button onclick = "art()" class = "button">확인</button>
+        </div>
+        <div id = "artDisplay"></div>
+    </div>
+
+    <div class = "container">
+        <h1>경매 정보</h1>
+        <div>
+            <label for = "auctionNumber">작품번호</label>
+            <input type = "text" id = "auctionNumber" name = "auctionNumber" placeholder = "숫자만 입력">
+            <button onclick = "Auction()" class = "button">확인</button>
+        </div>
+        <div id = "AuctionDisplay"></div>
+    </div>
+
+
+    <div class = "container">
+        <h1>경매</h1>
+        <div>
+            <label for = "buyer">주소::</label>
+            <input type = "text" id = "buyer"  placeholder = "지갑주소만 입력해주세요">
+        </div>
+        <div>
+            <label for = "artId">작품 번호:</label>
+            <input type = "text" id = "artId" placeholder = "정확한 작품 번호를 입력해주세요">
+        </div>
+        <div>
+            <label for = "amount">Ether</label>
+            <input type = "number" id = "amount" placeholder = "1 Ether 단위">
+        </div>
+        <button onclick = "Buy()" class = "button">경매</button>
+        <div id = "buyFail"></div>
+    </div>
+
+</body>
+</html>
+

@@ -256,7 +256,7 @@ const abi = [
 ]
 
 const ArtAuctionAbi = web3.eth.contract(abi);
-const ArtAuctionInstance = ArtAuctionAbi.at("계약주소");
+const ArtAuctionInstance = ArtAuctionAbi.at("0x5C2f735D64bD1B0Cb4207a0Cd932874e1E01C994");
 
 // var accounts = web3.eth.accounts;
 // var getBalance = web3.eth.getBalance;
@@ -314,12 +314,16 @@ const createPiece = () => { //작품 등록
 const art = () => { //작품 정보
     let number = $("#artNumber").val();
 
+	if (!number) {
+		alert("빈칸을 채워주세요")
+		return;
+	} 
     ArtAuctionInstance.arts(number , (error, result) => {
         if(!error) {
-            console.log("Success" , result); 
+            console.log(result); 
             displayArt(result);
         } else {
-            console.error("Error" , error)
+            console.error(error)
         }
     })
 }
@@ -336,6 +340,10 @@ const displayArt = (art) => { // 버튼 누르면 보이게 화면에서 보이�
 const Auction = () => { // 경매 정보
     let number = $("#auctionNumber").val(); // artId 검색
 
+	if (!number) {
+		alert("빈칸을 채워주세요")
+		return ;
+	}
     ArtAuctionInstance.auctions(number, (error, result) => {
         if(!error) {
             console.log(result)

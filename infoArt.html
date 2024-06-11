@@ -33,21 +33,15 @@
 
 
     <div class = "container">
-        <h1>경매</h1>
         <div>
-            <label for = "buyer">주소::</label>
-            <input type = "text" id = "buyer"  placeholder = "지갑주소만 입력해주세요">
+            <label for = "EndId">경매종료:</label>
+            <input type = "text" id = "EndId">
         </div>
         <div>
-            <label for = "artId">작품 번호:</label>
-            <input type = "text" id = "artId" placeholder = "정확한 작품 번호를 입력해주세요">
+            <label for = "owner">지갑주소</label>
+        <input type = "text" id = "owner" name = "owner">
         </div>
-        <div>
-            <label for = "amount">Ether</label>
-            <input type = "number" id = "amount" placeholder = "1 Ether 단위">
-        </div>
-        <button onclick = "Buy()" class = "button">경매</button>
-        <div id = "buyFail"></div>
+        <button onclick = "AuctionEnd()" class = "button">확인</button>
     </div>
 
 </body>

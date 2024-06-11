@@ -103,7 +103,7 @@ a {
 
 /* 각 아트 컨테이너의 스타일 설정 */
 .art-container {
-    width: 33%; /* 두 개씩 나란히 배치하기 위해 */
+    width: 33%; /*  3개씩 나란히 배치하기 위해 */
     border: 1px solid #ccc;
     margin-bottom: 20px;
     padding: 20px;

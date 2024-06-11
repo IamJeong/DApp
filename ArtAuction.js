@@ -1,49 +1,6 @@
 const web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 const abi = [
 	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "auctions",
-		"outputs": [
-			{
-				"name": "owner",
-				"type": "address"
-			},
-			{
-				"name": "highestBidder",
-				"type": "address"
-			},
-			{
-				"name": "winner",
-				"type": "address"
-			},
-			{
-				"name": "currentPrice",
-				"type": "uint256"
-			},
-			{
-				"name": "deadline",
-				"type": "uint256"
-			},
-			{
-				"name": "ended",
-				"type": "bool"
-			},
-			{
-				"name": "status",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
 		"constant": false,
 		"inputs": [
 			{
@@ -59,20 +16,6 @@ const abi = [
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_artId",
-				"type": "uint256"
-			}
-		],
-		"name": "placeBid",
-		"outputs": [],
-		"payable": true,
-		"stateMutability": "payable",
 		"type": "function"
 	},
 	{
@@ -106,25 +49,6 @@ const abi = [
 		"type": "function"
 	},
 	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "artIds",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
 		"constant": false,
 		"inputs": [
 			{
@@ -139,58 +63,17 @@ const abi = [
 		"type": "function"
 	},
 	{
-		"constant": true,
-		"inputs": [],
-		"name": "deadLine",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
+		"constant": false,
 		"inputs": [
 			{
-				"name": "",
+				"name": "_artId",
 				"type": "uint256"
 			}
 		],
-		"name": "arts",
-		"outputs": [
-			{
-				"name": "name",
-				"type": "string"
-			},
-			{
-				"name": "description",
-				"type": "string"
-			},
-			{
-				"name": "startingPrice",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "getArtIds",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256[]"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
+		"name": "placeBid",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
 		"type": "function"
 	},
 	{
@@ -252,11 +135,128 @@ const abi = [
 		],
 		"name": "AuctionEnded",
 		"type": "event"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "artIds",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "arts",
+		"outputs": [
+			{
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"name": "description",
+				"type": "string"
+			},
+			{
+				"name": "startingPrice",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "auctions",
+		"outputs": [
+			{
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"name": "highestBidder",
+				"type": "address"
+			},
+			{
+				"name": "winner",
+				"type": "address"
+			},
+			{
+				"name": "currentPrice",
+				"type": "uint256"
+			},
+			{
+				"name": "deadline",
+				"type": "uint256"
+			},
+			{
+				"name": "ended",
+				"type": "bool"
+			},
+			{
+				"name": "status",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "deadLine",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getArtIds",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
 	}
 ]
 
 const ArtAuctionAbi = web3.eth.contract(abi);
-const ArtAuctionInstance = ArtAuctionAbi.at("0x7f4b49776fcCA5e0fBA368Bca9eE5Ce041158291");
+const ArtAuctionInstance = ArtAuctionAbi.at("0xf40423454141a1cdD738dC22b3c2Dd26c06137a2");
 
 // var accounts = web3.eth.accounts;
 // var getBalance = web3.eth.getBalance;
@@ -265,7 +265,7 @@ const ArtAuctionInstance = ArtAuctionAbi.at("0x7f4b49776fcCA5e0fBA368Bca9eE5Ce04
 let artIdsArray = [];
 
 const createPiece = () => { //작품 등록
-
+	
     let artOwner = $("#artOwner").val();
     let artId = $("#artId").val();
     let pieceName = $("#pieceName").val();
@@ -273,23 +273,22 @@ const createPiece = () => { //작품 등록
     let duration = parseInt($("#duration").val(), 10); // 문자열을 정수로 변환
     let description = $("#description").val();
     // let time = new Date(duration * 1000);
-
+	
 	// 입력 필드가 비어 있는지 확인
 	if (!artOwner || !artId || !pieceName || !price || !duration || !description) {
 		alert("빈칸을 채워주세요.");
 		return; 
 	}
-    ArtAuctionInstance.createArt(artId, pieceName, price / 10**18 , duration, description, {from: artOwner}, (error, result) => {		
-        if (!error && confirm("등록하시겠습니까?")) {
-            alert("등록 완료");
-			console.log("Success", result);
 
-            artIdsArray.push(artId); // 등록된 작품 번호를 배열에 추가
-            console.log(artIdsArray);
-        } else {
-			alert("취소를 누르셨습니다.");
-			console.error("Error", error);
-        }
+		ArtAuctionInstance.createArt(artId, pieceName, price / 10**18 , duration, description, {from: artOwner}, (error, result) => {		
+		if (!error) {
+			console.log(artIdsArray);
+			alert("등록이 완료되었습니다.")
+			artIdsArray.push(artId);
+		} else {
+			alert("등록이 실패하였습니다.")
+			console.error(error);
+		}
     });
 
 	//image 보내보기
@@ -329,7 +328,6 @@ const displayArt = (art) => { // 버튼 누르면 보이게 화면에서 보이�
 	const artDisplay = document.getElementById('artDisplay');
     artDisplay.innerHTML = 
         `<h3>작품 정보</h3>
-
         <p><strong>이름:</strong> ${art[0]}</p>
         <p><strong>설명:</strong> ${art[1]}</p>
         <p><strong>시작 가격:</strong> ${(art[2])} Ether</p>`;
@@ -340,10 +338,10 @@ const Auction = () => { // 경매 정보
 
     ArtAuctionInstance.auctions(number, (error, result) => {
         if(!error) {
-            console.log("Success", result)
+            console.log(result)
             displayAuction(result)
         } else {
-            console.log("Error", error)
+            console.log(error)
 
         }
     })
@@ -369,12 +367,19 @@ const Buy = () => { // 구매 함수
     let etherAmount = web3.toWei(amount, "ether");
     let artId = $("#artId").val();
 
+	if(!buyer || !amount || !artId) {
+		alert("빈 칸을 채워주세요")
+	}
+
     ArtAuctionInstance.placeBid(artId, {from : buyer, value: etherAmount }, (error, result) => {
-        if(!error && confirm("경매에 참여하십니까?")) {
-			alert("경매 완료")
-            console.log(result)
+        if(!error) {
+            if(confirm("경매에 참여하십니까?")) {
+				alert("참여했습니다")
+				console.log(result)
+			} else {
+				alert("취소하였습니다")
+			}
         } else {
-			alert("취소하였습니다")
             console.error(error);
 			failBuy(result);
         }
@@ -426,7 +431,7 @@ const displayArtAndAuction = (artId, art, auction) => {
         <div class = "art-container">
             <div class = "art-content">
                 <div class = "art-details">
-                    <h3>미술품 번호: ${artId}</h3>
+                    <h3>작품 번호: ${artId}</h3>
                     <p><strong>작품 이름:</strong> <div>${art[0]}</div></p>
                     <p><strong>설명:</strong> <div>${art[1]}</div></p>
                     <p><strong>시작 가격:</strong> ${(art[2])} Ether</p>

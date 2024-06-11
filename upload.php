@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $pieceName = htmlspecialchars($_POST['pieceName']); // 작품 이름 가져오기
         $price = htmlspecialchars($_POST['price']); // 가격 가져오기
         $uploadDir = 'uploads/'; // 이미지 파일을 저장할 디렉터리
-        $extension = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION); // 확장자 가져오기
+        // $extension = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION); // 확장자 가져오기
 
 
         $uploadFile = $uploadDir . $artId . '_' . $pieceName . '_' . $price . '.' . "png"; // 파일명 설정

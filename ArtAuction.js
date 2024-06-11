@@ -256,7 +256,7 @@ const abi = [
 ]
 
 const ArtAuctionAbi = web3.eth.contract(abi);
-const ArtAuctionInstance = ArtAuctionAbi.at("0xf40423454141a1cdD738dC22b3c2Dd26c06137a2");
+const ArtAuctionInstance = ArtAuctionAbi.at("계약주소");
 
 // var accounts = web3.eth.accounts;
 // var getBalance = web3.eth.getBalance;
@@ -398,9 +398,11 @@ const AuctionEnd = () => { // 작품 등록한 사람이 경매 종료하게 만
     ArtAuctionInstance.endAuction(artId, {from: owner}, (error, result) => {
         if(!error) {
             console.log(result);
+			alert("완료했습니다.")
         } else {
-            console.log(error);
-        }
+			console.log(error);
+			alert("실패했습니다.")
+		}
     })
 }
 
